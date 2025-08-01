@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <title>Weather Forecast</title>
+    <link rel="icon" type="image/png" href="weather.png">
+  </head>
+  <body class="bg-cover bg-center  min-h-screen" style="background-image: url('wast\ city\ clouds.jpg'); font-family: 'Roboto', sans-serif;">
+    <h1 class="text-white text-center text-3xl lg:text-4xl font-semibold py-5 bg-cyan-400/30 shadow-lg backdrop-blur border-b border-white/20">
+      Weather Dashboard
+    </h1>
+
+    <!-- Input + Weather Details Side-by-side on lg -->
+    <div class="flex flex-col lg:flex-row gap-10 p-9">
+      <!-- Input Section: 40% width on lg -->
+      <div class="w-full lg:w-2/5">
+        <h3 class="text-white text-xl lg:text-2xl font-semibold mb-3">Enter a City Name</h3>
+        <input class="city-input w-full h-12 px-5 mb-5 text-white text-lg rounded border border-white/20 bg-white/20 placeholder-white/80 backdrop-blur focus:outline-none focus:bg-white/30" type="text" placeholder="India , China , Russia" />
+        <select class="recent-cities hidden h-12 mb-3 px-5 font-semibold  text-lg rounded border border-white/20 bg-white/20 placeholder-white/80 backdrop-blur focus:outline-none focus:bg-white/30 w-full sm:w-[200px] md:w-[100%] lg:w-[100%] appearance-none">
+        <!-- Options are updated trough javascript dynamically -->
+       </select>
+        <button class="search-btn w-full py-3 text-white font-semibold bg-cyan-400/60 rounded shadow hover:bg-cyan-500/70">Search</button>
+
+        <div class="relative flex items-center justify-center my-6">
+          <div class="h-px w-full bg-white/20"></div>
+          <span class="absolute bg-cyan-200/40 px-4 text-white text-lg rounded backdrop-blur">or</span>
+        </div>
+        <button class="location-btn w-full py-3 text-white font-semibold bg-gray-400/60 rounded shadow hover:bg-gray-500/70">Use Current Location</button>
+      </div>
+
+      <!-- Current Weather Section: 60% width on large devices -->
+      <div class="w-full lg:w-3/5">
+        <div class="current-weather flex flex-row  md:flex md:flex-row md:justify-between items-center text-white p-6 lg:h-[100%] bg-cyan-400/30 backdrop-blur shadow-lg">
+          <div class="details">
+            <h2 class="text-2xl lg:text-3xl font-bold">_______ ( _____ )</h2>
+            <h4 class="mt-6 text-lg lg:text-xl font-semibold">Temperature : ___ °C</h4>
+            <h4 class="mt-6 text-lg lg:text-xl font-semibold">Wind : ___ M/S</h4>
+            <h4 class="mt-6 text-lg lg:text-xl font-semibold">Humidity : __ %</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5-Day Forecast data  -->
+    <div class="px-9">
+      <div class="days-forecast mt-8 mb-10">
+        <h2 class="text-xl lg:text-2xl font-semibold text-white text-center md:mb-14 md:text-4xl md:text-blue">5 Days Forecast</h2>
+        <ul class="Weather-cards flex flex-wrap lg:flex-nowrap justify-center gap-5">
+          <li class="card list-none text-white text-center p-5 w-full mx-auto sm:w-[calc(100%/2-10px)] md:w-[calc(100%/3-16px)] lg:w-1/5  lg:w-[calc(100%/5-6px)]  bg-gray-400/30 backdrop-blur shadow rounded">
+            <h3 class="text-lg font-semibold">( _______ )</h3>
+            <h4 class="mt-4 text-sm lg:text-base font-medium">Temp : ___ °C</h4>
+            <h4 class="mt-2 text-sm lg:text-base font-medium">Wind : ___ M/S</h4>
+            <h4 class="mt-2 text-sm lg:text-base font-medium">Humidity : __ %</h4>
+          </li>
+          <li class="card list-none text-white text-center p-5 w-full mx-auto sm:w-[calc(100%/2-10px)] md:w-[calc(100%/3-16px)] lg:w-1/5  lg:w-[calc(100%/5-6px)]  bg-gray-400/30 backdrop-blur shadow rounded">
+            <h3 class="text-lg font-semibold">( _______ )</h3>
+            <h4 class="mt-4 text-sm lg:text-base font-medium">Temp : ___ °C</h4>
+            <h4 class="mt-2 text-sm lg:text-base font-medium">Wind : ___ M/S</h4>
+            <h4 class="mt-2 text-sm lg:text-base font-medium">Humidity : __ %</h4>
+          </li>
+          <li class="card list-none text-white text-center p-5 w-full mx-auto sm:w-[calc(100%/2-10px)] md:w-[calc(100%/3-16px)] lg:w-1/5  lg:w-[calc(100%/5-6px)]  bg-gray-400/30 backdrop-blur shadow rounded">
+            <h3 class="text-lg font-semibold">( _______ )</h3>
+            <h4 class="mt-4 text-sm lg:text-base font-medium">Temp : ___ °C</h4>
+            <h4 class="mt-2 text-sm lg:text-base font-medium">Wind : ___ M/S</h4>
+            <h4 class="mt-2 text-sm lg:text-base font-medium">Humidity : __ %</h4>
+          </li>
+          <li class="card list-none text-white text-center p-5 w-full mx-auto sm:w-[calc(100%/2-10px)] md:w-[calc(100%/3-16px)] lg:w-1/5  lg:w-[calc(100%/5-6px)]  bg-gray-400/30 backdrop-blur shadow rounded">
+            <h3 class="text-lg font-semibold">( _______ )</h3>
+            <h4 class="mt-4 text-sm lg:text-base font-medium">Temp : ___ °C</h4>
+            <h4 class="mt-2 text-sm lg:text-base font-medium">Wind : ___ M/S</h4>
+            <h4 class="mt-2 text-sm lg:text-base font-medium">Humidity : __ %</h4>
+          </li>
+          <li class="card list-none text-white text-center p-5 w-full mx-auto sm:w-[calc(100%/2-10px)] md:w-[calc(100%/3-16px)] lg:w-1/5  lg:w-[calc(100%/5-6px)]  bg-gray-400/30 backdrop-blur shadow rounded">
+            <h3 class="text-lg font-semibold">( _______ )</h3>
+            <h4 class="mt-4 text-sm lg:text-base font-medium">Temp : ___ °C</h4>
+            <h4 class="mt-2 text-sm lg:text-base font-medium">Wind : ___ M/S</h4>
+            <h4 class="mt-2 text-sm lg:text-base font-medium">Humidity : __ %</h4>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
