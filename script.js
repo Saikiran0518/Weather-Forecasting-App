@@ -10,7 +10,7 @@ const dropdown = document.querySelector(".recent-cities");
 
 //This is the API key for taken API to fetch weather Data
 
-const API_KEY =  "8afa574ea3e0c01fa882f674b4c76c98" ; 
+const API_KEY =  " " ; 
 
 
 // This section updates the data dynamically after searching the details are updated in the weather card
